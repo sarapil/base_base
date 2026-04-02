@@ -1,0 +1,296 @@
+/**
+ * Base Base App - Sidebar Styles
+ * Professional collapsible categorized sidebar for Frappe/ERPNext
+ * Uses Frappe default CSS variables for consistent theming
+ */
+
+/* ============================================
+   BODY SCROLL CONTROL - DISABLE BODY SCROLL
+   ============================================ */
+html {
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+body {
+    overflow: hidden !important;
+    height: 100% !important;
+    position: fixed !important;
+    width: 100% !important;
+}
+
+/* Main container should handle scroll */
+.main-section,
+.layout-main,
+.layout-main-section {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: calc(100vh - var(--navbar-height, 56px)) !important;
+    max-height: calc(100vh - var(--navbar-height, 56px)) !important;
+}
+
+/* Layout main section wrapper - NO scroll */
+.layout-main-section-wrapper {
+    overflow: hidden !important;
+}
+
+/* Page body - NO scroll */
+.page-body {
+    overflow: hidden !important;
+}
+
+.base-base-page-spacer {
+    display: block;
+    width: 100%;
+}
+
+/* Page container */
+.page-container {
+    overflow: hidden !important;
+    padding-top: 0;
+}
+#page-desktop {
+    padding-top: 0;
+}
+/* Container page */
+.container.page-body {
+    overflow: hidden !important;
+}
+
+/* ============================================
+   HIDE DUPLICATE SIDEBAR ITEMS
+   ============================================ */
+.base-base-hidden,
+.desk-sidebar .base-base-hidden,
+.desk-sidebar .sidebar-item-container.base-base-hidden {
+    display: none !important;
+}
+
+/* ============================================
+   SIDEBAR WRAPPER
+   ============================================ */
+.base-base-sidebar-menu {
+    padding: var(--padding-xs, 4px) 0;
+    margin-bottom: var(--margin-sm, 8px);
+}
+
+/* ============================================
+   SEPARATOR
+   ============================================ */
+.base-base-sidebar-separator {
+    height: 1px;
+    background-color: var(--border-color, #e2e8f0);
+    margin: var(--margin-sm, 8px) var(--margin-md, 15px);
+    opacity: 0.6;
+}
+
+/* ============================================
+   CATEGORY SECTION
+   ============================================ */
+.base-base-category {
+    margin-bottom: 2px;
+}
+
+/* ============================================
+   CATEGORY HEADER - Matching Frappe Style
+   ============================================ */
+.base-base-category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--margin-sm, 8px);
+    padding: var(--padding-xs, 4px) var(--padding-sm, 8px);
+    margin: 0 var(--margin-xs, 4px);
+    cursor: pointer;
+    border-radius: var(--border-radius, 8px);
+    transition: background-color 0.15s ease;
+    user-select: none;
+    min-height: 32px;
+}
+
+.base-base-category-header:hover {
+    background-color: var(--sidebar-select-color, var(--bg-light-gray, #f4f5f6));
+}
+
+.base-base-category-header.expanded {
+    background-color: transparent;
+}
+
+/* Category Icon */
+.base-base-category-header .category-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--text-muted, #74808b);
+    flex-shrink: 0;
+}
+
+.base-base-category-header .category-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.base-base-category-header:hover .category-icon,
+.base-base-category-header.expanded .category-icon {
+    color: var(--text-color, #1f272e);
+}
+
+/* Category Label */
+.base-base-category-header .category-label {
+    flex: 1;
+    font-size: var(--text-sm, 13px);
+    font-weight: 500;
+    color: var(--text-muted, #74808b);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.base-base-category-header:hover .category-label,
+.base-base-category-header.expanded .category-label {
+    color: var(--text-color, #1f272e);
+}
+
+/* Category Chevron */
+.base-base-category-header .category-chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: var(--text-light, #a1acb8);
+    transition: transform 0.2s ease;
+}
+
+.base-base-category-header .category-chevron svg {
+    width: 12px;
+    height: 12px;
+}
+
+.base-base-category-header:hover .category-chevron {
+    color: var(--text-muted, #74808b);
+}
+
+/* ============================================
+   CATEGORY ITEMS CONTAINER
+   ============================================ */
+.base-base-category-items {
+    overflow: hidden;
+    max-height: 600px;
+    transition: max-height 0.25s ease-out, opacity 0.15s ease;
+    padding-left: 0;
+    opacity: 1;
+}
+
+.base-base-category-items.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* ============================================
+   SIDEBAR ITEM - Matching Frappe standard-sidebar-item
+   ============================================ */
+.base-base-sidebar-item {
+    margin: 0 var(--margin-xs, 4px);
+    margin-left: var(--margin-md, 15px);
+    border-radius: var(--border-radius, 8px);
+    transition: background-color 0.15s ease;
+    position: relative;
+}
+
+.base-base-sidebar-item:hover {
+    background-color: var(--sidebar-select-color, var(--bg-light-gray, #f4f5f6));
+}
+
+/* Selected state - matching Frappe */
+.base-base-sidebar-item.selected {
+    background-color: var(--sidebar-select-color, var(--bg-light-gray, #f4f5f6));
+}
+
+/* ============================================
+   SIDEBAR LINK - Matching Frappe anchor style
+   ============================================ */
+.base-base-sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--margin-sm, 8px);
+    padding: 6px var(--padding-sm, 8px);
+    text-decoration: none !important;
+    color: var(--text-color, #1f272e) !important;
+    font-size: var(--text-base, 14px);
+    font-weight: 400;
+    line-height: 1.4;
+    transition: color 0.15s ease;
+    min-height: 30px;
+}
+
+/* Item Icon - matching Frappe sidebar-item-icon */
+.base-base-sidebar-link .item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--text-muted, #74808b);
+    flex-shrink: 0;
+}
+
+.base-base-sidebar-link .item-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.base-base-sidebar-item:hover .item-icon,
+.base-base-sidebar-item.selected .item-icon {
+    color: var(--text-color, #1f272e);
+}
+
+/* Item Label */
+.base-base-sidebar-link .item-label {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.base-base-sidebar-link:hover {
+    text-decoration: none !important;
+}
+
+/* ============================================
+   DESK SIDEBAR SCROLL
+   ============================================ */
+.desk-sidebar {
+    overflow-y: auto;
+    max-height: calc(100vh - var(--navbar-height, 56px));
+    padding-bottom: var(--padding-lg, 20px);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .base-base-category-header {
+        padding: var(--padding-sm, 8px);
+        min-height: 40px;
+    }
+    
+    .base-base-sidebar-link {
+        padding: var(--padding-sm, 8px);
+        min-height: 36px;
+    }
+}
+
+/* ============================================
+   ANIMATION - RESPECT USER PREFERENCES
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .base-base-category-items,
+    .base-base-category-header,
+    .base-base-sidebar-item,
+    .base-base-sidebar-link,
+    .base-base-category-header .category-chevron {
+        transition: none !important;
+    }
+}
