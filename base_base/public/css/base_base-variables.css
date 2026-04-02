@@ -1,0 +1,62 @@
+/* Base Base — Design Tokens / CSS Variables
+ * Brand color palette and design system tokens.
+ * Prefix: --bb-
+ */
+
+:root {
+  /* Primary */
+  --bb-primary: #6366F1;
+  --bb-primary-light: #6366F122;
+  --bb-primary-dark: #6366F1DD;
+
+  /* Secondary & Accent */
+  --bb-secondary: #64748B;
+  --bb-accent: #6366F1;
+
+  /* Semantic */
+  --bb-success: #10B981;
+  --bb-warning: #F59E0B;
+  --bb-danger: #EF4444;
+  --bb-info: #3B82F6;
+
+  /* Surfaces */
+  --bb-bg: #FFFFFF;
+  --bb-bg-subtle: #F8FAFC;
+  --bb-text: #1E293B;
+  --bb-text-muted: #64748B;
+  --bb-border: #E2E8F0;
+
+  /* Spacing */
+  --bb-space-xs: 0.25rem;
+  --bb-space-sm: 0.5rem;
+  --bb-space-md: 1rem;
+  --bb-space-lg: 1.5rem;
+  --bb-space-xl: 2rem;
+
+  /* Border radius */
+  --bb-radius-sm: 0.375rem;
+  --bb-radius-md: 0.5rem;
+  --bb-radius-lg: 0.75rem;
+  --bb-radius-xl: 1rem;
+
+  /* Shadows */
+  --bb-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --bb-shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --bb-shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+  /* Typography */
+  --bb-font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --bb-font-family-ar: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --bb-bg: #0F172A;
+  --bb-bg-subtle: #1E293B;
+  --bb-text: #F1F5F9;
+  --bb-text-muted: #94A3B8;
+  --bb-border: #334155;
+  --bb-shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --bb-shadow-md: 0 4px 6px rgba(0,0,0,0.4);
+  --bb-shadow-lg: 0 10px 15px rgba(0,0,0,0.5);
+}

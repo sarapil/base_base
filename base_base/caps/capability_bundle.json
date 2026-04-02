@@ -1,0 +1,11 @@
+[
+  {
+    "name": "BB_full_access",
+    "capabilities": [
+      "BB_manage_settings",
+      "BB_manage_modules",
+      "BB_admin_access"
+    ],
+    "description": "Full Base Base access"
+  }
+]

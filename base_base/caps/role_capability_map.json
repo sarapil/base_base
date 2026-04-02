@@ -1,0 +1,10 @@
+[
+  {
+    "role": "System Manager",
+    "capabilities": [
+      "BB_manage_settings",
+      "BB_manage_modules",
+      "BB_admin_access"
+    ]
+  }
+]

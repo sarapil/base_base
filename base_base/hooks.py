@@ -270,3 +270,7 @@ caps_capabilities = [
 fixtures = [
     {"dt": "Custom Field", "filters": [["module", "=", "Base Base"]]},
 ]
+
+app_icon = "/assets/base_base/images/base_base-logo.svg"
+app_color = "#6366F1"
+app_logo_url = "/assets/base_base/images/base_base-logo.svg"
