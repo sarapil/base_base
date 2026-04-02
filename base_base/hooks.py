@@ -89,6 +89,10 @@ extend_bootinfo = "base_base.boot.extend_bootinfo"
 # ------------
 
 # before_install = "base_base.install.before_install"
+
+# ─── Post-Migration Seed ───
+after_migrate = ["base_base.base_base.seed.seed_data"]
+
 # after_install = "base_base.install.after_install"
 
 # Uninstallation
