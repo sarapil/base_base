@@ -25,7 +25,10 @@ required_apps = ["frappe"]
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = "/assets/base_base/css/base_base.css"
+app_include_css = [
+    "/assets/base_base/css/base_base.css",
+    "/assets/base_base/css/base_base-theme.css",
+]
 app_include_js = "/assets/base_base/js/base_base.js"
 
 # include js, css files in header of web template
@@ -274,3 +277,9 @@ fixtures = [
 app_icon = "/assets/base_base/images/base_base-logo.svg"
 app_color = "#6366F1"
 app_logo_url = "/assets/base_base/images/base_base-logo.svg"
+
+# Website Route Rules
+# --------------------------------------------------------
+website_route_rules = [
+    {"from_route": "/base-base/<path:app_path>", "to_route": "base-base/<app_path>"},
+]

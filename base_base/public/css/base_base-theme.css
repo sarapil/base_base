@@ -1,0 +1,120 @@
+/* Base Base — Theme CSS Variables
+ * Brand colors and design tokens for Base Base
+ * Domain: Shared Utilities & Base Configuration
+ */
+
+:root {
+  /* Primary Colors */
+  --base_base-primary: #6366F1;
+  --base_base-primary-dark: #4F46E5;
+  --base_base-primary-light: #6366F133;
+  --base_base-primary-subtle: #6366F10D;
+
+  /* Neutral Colors */
+  --base_base-bg: #FFFFFF;
+  --base_base-bg-subtle: #F8FAFC;
+  --base_base-text: #1E293B;
+  --base_base-text-muted: #64748B;
+  --base_base-border: #E2E8F0;
+
+  /* Status Colors */
+  --base_base-success: #10B981;
+  --base_base-warning: #F59E0B;
+  --base_base-danger: #EF4444;
+  --base_base-info: #3B82F6;
+
+  /* Spacing */
+  --base_base-radius-sm: 6px;
+  --base_base-radius-md: 10px;
+  --base_base-radius-lg: 16px;
+
+  /* Shadows */
+  --base_base-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --base_base-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --base_base-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --base_base-font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+  --base_base-font-size-xs: 0.75rem;
+  --base_base-font-size-sm: 0.875rem;
+  --base_base-font-size-base: 1rem;
+  --base_base-font-size-lg: 1.125rem;
+  --base_base-font-size-xl: 1.25rem;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --base_base-bg: #0F172A;
+  --base_base-bg-subtle: #1E293B;
+  --base_base-text: #F1F5F9;
+  --base_base-text-muted: #94A3B8;
+  --base_base-border: #334155;
+  --base_base-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --base_base-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --base_base-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* RTL Support */
+[dir="rtl"] .base_base-sidebar {
+  border-inline-start: 2px solid var(--base_base-primary);
+  margin-inline-start: 0;
+  margin-inline-end: 1rem;
+}
+
+/* Glassmorphism Card */
+.base_base-glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--base_base-border);
+  border-radius: var(--base_base-radius-lg);
+  box-shadow: var(--base_base-shadow-md);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.base_base-glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--base_base-shadow-lg);
+}
+
+[data-theme="dark"] .base_base-glass-card {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+/* Status Badge */
+.base_base-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: var(--base_base-font-size-xs);
+  font-weight: 600;
+}
+
+.base_base-badge--success { background: var(--base_base-success)1A; color: var(--base_base-success); }
+.base_base-badge--warning { background: var(--base_base-warning)1A; color: var(--base_base-warning); }
+.base_base-badge--danger { background: var(--base_base-danger)1A; color: var(--base_base-danger); }
+.base_base-badge--info { background: var(--base_base-info)1A; color: var(--base_base-info); }
+
+/* Workspace Header */
+.base_base-ws-header {
+  background: linear-gradient(135deg, var(--base_base-primary), var(--base_base-primary-dark));
+  color: white;
+  padding: 2rem;
+  border-radius: var(--base_base-radius-lg);
+  margin-bottom: 1.5rem;
+}
+
+.base_base-ws-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.base_base-ws-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.85;
+  font-size: var(--base_base-font-size-sm);
+}
