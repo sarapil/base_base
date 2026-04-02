@@ -14,6 +14,7 @@ def get_sidebar_config() -> dict:
     Get the sidebar configuration for the current user.
     Returns the categorized sidebar menu structure.
     """
+    frappe.only_for(["System Manager"])
     config = {
         "TopApps": {
             "label": _("Apps"),
@@ -143,6 +144,7 @@ def get_home_page() -> str:
     """
     Get the home page route for the current user.
     """
+    frappe.only_for(["System Manager"])
     return "/desk/home"
 
 
