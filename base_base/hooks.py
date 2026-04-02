@@ -257,3 +257,16 @@ after_migrate = ["base_base.base_base.seed.seed_data"]
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+# CAPS Integration — Capability-Based Access Control
+# ------------------------------------------------------------
+caps_capabilities = [
+    {"name": "BB_manage_settings", "category": "Module", "description": "Configure Base Base settings"},
+    {"name": "BB_manage_modules", "category": "Module", "description": "Manage shared utility modules"},
+    {"name": "BB_admin_access", "category": "Action", "description": "Full administrative access"},
+]
+
+# Fixtures
+# --------------------------------------------------------
+fixtures = [
+    {"dt": "Custom Field", "filters": [["module", "=", "Base Base"]]},
+]

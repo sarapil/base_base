@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <rect width="800" height="400" fill="white"/>
+  <rect x="320" y="80" width="160" height="160" rx="32" fill="#6366F1"/>
+  <g transform="translate(356,116) scale(3.67)">
+    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="white"/>
+  </g>
+  <text x="400" y="310" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="40" fill="#6366F1">Base Base</text>
+  <text x="400" y="350" text-anchor="middle" font-family="Inter,sans-serif" font-weight="400" font-size="16" fill="#94A3B8">by Arkan Lab</text>
+  <style>
+    @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+    text { animation: fadeIn 1s ease-in; }
+  </style>
+</svg>
