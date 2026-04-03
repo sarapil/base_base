@@ -1,0 +1,12 @@
+{
+  "app": "base_base",
+  "name": "Base Base",
+  "icon": "settings",
+  "color": "#607D8B",
+  "languages": [
+    "en",
+    "ar"
+  ],
+  "default_language": "en",
+  "fallback_language": "en"
+}
