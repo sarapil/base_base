@@ -9,7 +9,15 @@ from frappe import _
 
 def after_install():
     """Post-installation setup for Base Base."""
-    inject_desktop_icon()
+    # ── Desktop Icon injection (Frappe v16 /desk) ──
+    from base_base.desktop_utils import inject_app_desktop_icon
+    inject_app_desktop_icon(
+        app="base_base",
+        label="Base Base",
+        route="/desk/base-base",
+        logo_url="/assets/base_base/images/base_base-logo.svg",
+        bg_color="#6366F1",
+    )
     print(f"✅ {_("Base Base")}: post-install complete")
 
 
