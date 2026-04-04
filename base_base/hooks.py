@@ -1,7 +1,12 @@
+# Copyright (c) 2024, Moataz M Hassan (Arkan Lab)
+# Developer Website: https://arkan.it.com
+# License: MIT
+# For license information, please see license.txt
+
 app_name = "base_base"
 app_title = "Base Base"
 app_publisher = "Base Application"
-app_description = "Base Base Application"
+app_description = "Shared development utilities and patterns for Frappe apps"
 app_email = "ahmedshaheen@example.com"
 app_license = "mit"
 
@@ -29,7 +34,10 @@ app_include_css = [
     "/assets/base_base/css/base_base.css",
     "/assets/base_base/css/base_base-theme.css",
 ]
-app_include_js = "/assets/base_base/js/base_base.js"
+app_include_js = [
+    "/assets/base_base/js/base_base.js",
+    "/assets/base_base/js/fv_integration.js",
+]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/base_base/css/base_base.css"
