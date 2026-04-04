@@ -8,7 +8,7 @@ app_license = "mit"
 # Apps
 # ------------------
 
-required_apps = ["frappe", "frappe_visual"]
+required_apps = ["frappe", "frappe_visual", "arkan_help"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -272,6 +272,8 @@ caps_capabilities = [
 # --------------------------------------------------------
 fixtures = [
     {"dt": "Custom Field", "filters": [["module", "=", "Base Base"]]},
+    {"dt": "Desktop Icon", "filters": [["app", "=", "base_base"]]},
+    {"dt": "Workspace", "filters": [["module", "like", "Base Base%"]]},
 ]
 
 app_icon = "/assets/base_base/images/base_base-logo.svg"
