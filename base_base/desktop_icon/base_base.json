@@ -3,9 +3,11 @@
   "doctype": "Desktop Icon",
   "icon_type": "App",
   "label": "Base Base",
-  "link": "/app/base-base",
+  "link": "/desk/base-base",
   "link_type": "External",
-  "logo_url": "/assets/base_base/images/logo.svg",
+  "logo_url": "/assets/base_base/images/base_base-logo.svg",
   "standard": 1,
-  "hidden": 0
+  "hidden": 0,
+  "bg_color": "#6366F1",
+  "name": "Base Base"
 }

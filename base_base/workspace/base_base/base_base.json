@@ -1,0 +1,76 @@
+{
+  "app": "base_base",
+  "charts": [],
+  "content": "[{\"id\": \"hdr1\", \"type\": \"header\", \"data\": {\"text\": \"<span class='text-lg'>Base Base \\u2014 Shared Utilities & Common Patterns Library</span>\", \"col\": 12}}, {\"id\": \"sc1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"About Base Base\", \"col\": 4}}, {\"id\": \"sc2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Onboarding\", \"col\": 4}}]",
+  "creation": "2026-04-04 00:00:00",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "tool",
+  "idx": 0,
+  "is_hidden": 0,
+  "label": "Base Base",
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Pages & Tools",
+      "link_count": 0,
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "About Base Base",
+      "link_count": 0,
+      "link_to": "base-base-about",
+      "link_type": "Page",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Onboarding",
+      "link_count": 0,
+      "link_to": "base-base-onboarding",
+      "link_type": "Page",
+      "onboard": 1,
+      "type": "Link"
+    }
+  ],
+  "modified": "2026-04-04 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Base Base",
+  "name": "Base Base",
+  "number_cards": [],
+  "owner": "Administrator",
+  "parent_page": "",
+  "public": 1,
+  "restrict_to_domain": "",
+  "roles": [],
+  "sequence_id": 1,
+  "shortcuts": [
+    {
+      "color": "#6366F1",
+      "doc_view": "",
+      "label": "About Base Base",
+      "link_to": "base-base-about",
+      "stats_filter": "",
+      "type": "Page"
+    },
+    {
+      "color": "#6366F1",
+      "doc_view": "",
+      "label": "Onboarding",
+      "link_to": "base-base-onboarding",
+      "stats_filter": "",
+      "type": "Page"
+    }
+  ],
+  "title": "Base Base"
+}

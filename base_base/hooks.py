@@ -16,15 +16,14 @@ app_license = "mit"
 required_apps = ["frappe", "frappe_visual", "arkan_help"]
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "base_base",
-# 		"logo": "/assets/base_base/logo.png",
-# 		"title": "Base Base",
-# 		"route": "/base_base",
-# 		"has_permission": "base_base.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+    {
+        "name": "base_base",
+        "logo": "/assets/base_base/images/base_base-logo.svg",
+        "title": "Base Base",
+        "route": "/desk/base-base",
+    }
+]
 
 # Includes in <head>
 # ------------------
