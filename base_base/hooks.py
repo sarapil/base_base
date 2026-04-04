@@ -283,5 +283,8 @@ app_logo_url = "/assets/base_base/images/base_base-logo.svg"
 # Website Route Rules
 # --------------------------------------------------------
 website_route_rules = [
+    {"from_route": "/base-base-about", "to_route": "base_base_about"},
+    {"from_route": "/base-base-onboarding", "to_route": "base_base_onboarding"},
+    {"from_route": "/عن-base-base", "to_route": "base_base_about"},
     {"from_route": "/base-base/<path:app_path>", "to_route": "base-base/<app_path>"},
 ]

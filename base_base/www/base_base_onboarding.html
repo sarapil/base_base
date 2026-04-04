@@ -1,0 +1,47 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("Base Base Onboarding") }}{% endblock %}
+
+{% block page_content %}
+<div id="base-base-onboarding-container" data-page="base-base-onboarding"></div>
+
+<style>
+  #base-base-onboarding-container { min-height: 80vh; padding: 24px 0; }
+  .bb-onboard-hero { text-align: center; padding: 60px 20px; }
+  .bb-onboard-hero h1 { font-size: 2rem; font-weight: 700; color: var(--text-color); margin-bottom: 16px; }
+  .bb-onboard-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto 32px; }
+  .bb-onboard-steps { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+  .bb-step { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border-color); }
+  .bb-step-num { width: 40px; height: 40px; border-radius: 50%; background: rgba(107, 114, 128, 0.1); color: #6B7280; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .bb-step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .bb-step p { font-size: 0.9rem; color: var(--text-muted); }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('base-base-onboarding-container');
+  const steps = [
+    { title: __("Install Base Base"), desc: __("Base Base is a dependency app — install it via bench install-app base_base. It provides shared utilities for other Arkan Lab apps.") },
+    { title: __("Shared Components"), desc: __("Explore the shared DocTypes, utility functions, and base classes available for use in your custom apps.") },
+    { title: __("Desktop Integration"), desc: __("Base Base provides desktop icon injection utilities used by all Arkan Lab apps for workspace grouping.") },
+  ];
+  container.innerHTML = `
+    <div class="bb-onboard-hero">
+      <h1>🚀 ${__("Get Started with Base Base")}</h1>
+      <p>${__("Learn how this utility foundation supports all Arkan Lab apps.")}</p>
+    </div>
+    <div class="bb-onboard-steps">
+      ${steps.map((s, i) => `
+        <div class="bb-step">
+          <div class="bb-step-num">${i + 1}</div>
+          <div>
+            <h3>${s.title}</h3>
+            <p>${s.desc}</p>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+});
+</script>
+{% endblock %}

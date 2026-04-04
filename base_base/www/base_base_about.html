@@ -1,0 +1,48 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _("About Base Base") }}{% endblock %}
+
+{% block page_content %}
+<div id="base-base-about-container" data-page="base-base-about"></div>
+
+<style>
+  :root { --bb-primary: #6366F1; --bb-gradient: linear-gradient(135deg, #6366F1, #4F46E5); }
+  #base-base-about-container { min-height: 80vh; padding: 24px 0; }
+  .bb-about-hero { text-align: center; padding: 60px 20px; }
+  .bb-about-hero img { width: 140px; height: 140px; margin-bottom: 24px; }
+  .bb-about-hero h1 { font-size: 2.5rem; font-weight: 800; background: var(--bb-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+  .bb-about-hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 32px; }
+  .bb-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+  .bb-feature-card { padding: 28px; border-radius: 16px; background: var(--card-bg); border: 1px solid var(--border-color); transition: transform 0.2s; }
+  .bb-feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12); }
+  .bb-feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+  .bb-feature-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+  .bb-footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('base-base-about-container');
+  container.innerHTML = `
+    <div class="bb-about-hero">
+      <img src="/assets/base_base/images/base_base-logo.svg" alt="Base Base" onerror="this.style.display='none'">
+      <h1>${__("Base Base")}</h1>
+      <p>${__("Shared Utilities and Base Components — Common API helpers, reusable utilities, and foundational components for Arkan Lab applications.")}</p>
+    </div>
+    <div class="bb-features">
+      <div class="bb-feature-card">
+        <h3>🔧 ${__("Shared Utilities")}</h3>
+        <p>${__("Common Python and JavaScript utilities used across all Arkan Lab apps — formatting, validation, API wrappers, and helper functions.")}</p>
+      </div>
+      <div class="bb-feature-card">
+        <h3>🏗️ ${__("Base Components")}</h3>
+        <p>${__("Foundational components and patterns that other apps build upon — ensuring consistency and reducing code duplication.")}</p>
+      </div>
+    </div>
+    <div class="bb-footer">
+      <p>${__("Built by")} <strong>Arkan Lab</strong> • ${__("Powered by")} <strong>Frappe Framework</strong></p>
+    </div>
+  `;
+});
+</script>
+{% endblock %}
