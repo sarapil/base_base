@@ -36,6 +36,7 @@ app_include_css = [
 app_include_js = [
     "/assets/base_base/js/base_base.js",
     "/assets/base_base/js/fv_integration.js",
+    "/assets/base_base/js/licensing.js",
 ]
 
 # include js, css files in header of web template

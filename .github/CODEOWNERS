@@ -1,0 +1,36 @@
+# CODEOWNERS — مالكو الكود
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# These owners will be automatically requested for review when a PR
+# modifies files matching the patterns.
+# سيتم طلب مراجعة هؤلاء المالكين تلقائياً عند تعديل ملفات مطابقة.
+
+# ─── Default Owner — المالك الافتراضي ─────────────────────────────────────────
+*                           @sarapil/base_base-maintainers
+
+# ─── Core Configuration — الإعدادات الأساسية ──────────────────────────────────
+base_base/hooks.py       @sarapil/base_base-maintainers
+base_base/install.py     @sarapil/base_base-maintainers
+base_base/seed.py        @sarapil/base_base-maintainers
+pyproject.toml              @sarapil/base_base-maintainers
+setup.cfg                   @sarapil/base_base-maintainers
+
+# ─── API Layer — طبقة الواجهة البرمجية ────────────────────────────────────────
+base_base/api/           @sarapil/base_base-maintainers
+
+# ─── Security & Permissions — الأمان والصلاحيات ───────────────────────────────
+base_base/caps/          @sarapil/base_base-maintainers
+SECURITY.md                 @sarapil/base_base-maintainers
+
+# ─── CI/CD — خط الأنابيب ─────────────────────────────────────────────────────
+.github/workflows/          @sarapil/base_base-maintainers
+
+# ─── Frontend — الواجهة الأمامية ──────────────────────────────────────────────
+base_base/public/        @sarapil/base_base-maintainers
+
+# ─── Translations — الترجمات ──────────────────────────────────────────────────
+base_base/translations/  @sarapil/base_base-maintainers
+
+# ─── Documentation — التوثيق ──────────────────────────────────────────────────
+base_base/help/          @sarapil/base_base-maintainers
+*.md                        @sarapil/base_base-maintainers
