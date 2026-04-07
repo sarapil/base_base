@@ -5,7 +5,7 @@
 
 """
 Base Base — Custom Exception Hierarchy
-القاعدة الأساسية
+Base Base Exceptions
 """
 
 import frappe
