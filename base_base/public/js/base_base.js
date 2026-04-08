@@ -6,7 +6,7 @@
 /**
  * Base Base App - Custom Sidebar and Root Redirect
  * Compatible with Frappe v16+
- * 
+ *
  * This module provides a categorized collapsible sidebar for Frappe/ERPNext
  * Features:
  * - Categorized collapsible sidebar menus
@@ -77,7 +77,7 @@
         // Disabled for v16 - routes are handled by Frappe core
         return false;
     };
-    
+
     // Alias for backward compatibility
     base_base.handleRootRedirect = base_base.handleRouteRedirects;
 
@@ -252,7 +252,7 @@
                     });
                 }
             });
-            
+
             // Also add hidden workspaces to the list
             if (base_base.hiddenWorkspaces) {
                 base_base.hiddenWorkspaces.forEach(ws => {
@@ -260,29 +260,29 @@
                     this.categorizedWorkspaces.add(ws.toLowerCase().replace(/\s+/g, '-'));
                 });
             }
-            
+
             console.log('Base Base: Categorized workspaces to hide:', Array.from(this.categorizedWorkspaces));
         }
 
         extractOriginalIcons() {
             // Find all sidebar-item-container elements (this is the main container)
             const sidebarItems = this.sidebarContainer.querySelectorAll('.sidebar-item-container');
-            
+
             sidebarItems.forEach(item => {
                 const itemName = (item.getAttribute('item-name') || '').toLowerCase();
                 const link = item.querySelector('a.item-anchor');
-                
+
                 if (link) {
                     const href = link.getAttribute('href') || '';
                     const slug = href.replace('/desk/', '').replace('/private/', '').split('?')[0].toLowerCase();
-                    
+
                     // Get icon from item-icon attribute on sidebar-item-icon span
                     let icon = null;
                     const iconHolder = item.querySelector('.sidebar-item-icon[item-icon]');
                     if (iconHolder) {
                         icon = iconHolder.getAttribute('item-icon');
                     }
-                    
+
                     // Also try to get from SVG use element
                     if (!icon) {
                         const useEl = item.querySelector('svg use');
@@ -294,14 +294,14 @@
                             }
                         }
                     }
-                    
+
                     if (icon) {
                         if (slug) this.workspaceIcons[slug] = icon;
                         if (itemName) this.workspaceIcons[itemName] = icon;
                     }
                 }
             });
-            
+
             console.log('Base Base: Extracted workspace icons:', this.workspaceIcons);
         }
 
@@ -309,40 +309,40 @@
             // Target .sidebar-item-container which is the main wrapper for each sidebar item
             const sidebarItems = this.sidebarContainer.querySelectorAll('.sidebar-item-container');
             let hiddenCount = 0;
-            
+
             sidebarItems.forEach(item => {
                 const itemName = (item.getAttribute('item-name') || '').toLowerCase();
                 const link = item.querySelector('a.item-anchor');
-                
+
                 let shouldHide = false;
-                
+
                 // Check by item-name attribute
                 if (itemName && this.categorizedWorkspaces.has(itemName)) {
                     shouldHide = true;
                 }
-                
+
                 // Check by item-name with hyphen
                 const itemNameHyphen = itemName.replace(/\s+/g, '-');
                 if (this.categorizedWorkspaces.has(itemNameHyphen)) {
                     shouldHide = true;
                 }
-                
+
                 if (link) {
                     const href = link.getAttribute('href') || '';
                     const slug = href.replace('/desk/', '').replace('/private/', '').split('?')[0].toLowerCase();
-                    
+
                     // Check by slug
                     if (this.categorizedWorkspaces.has(slug)) {
                         shouldHide = true;
                     }
                 }
-                
+
                 if (shouldHide) {
                     item.classList.add('base-base-hidden');
                     hiddenCount++;
                 }
             });
-            
+
             console.log('Base Base: Hidden', hiddenCount, 'duplicate items');
         }
 
@@ -355,18 +355,18 @@
 
         getIconForWorkspace(workspaceName) {
             const slug = this.getSlug(workspaceName);
-            
+
             // First try to get from database icons (most reliable)
             if (base_base.workspaceIconsDB[slug]) {
                 return base_base.workspaceIconsDB[slug];
             }
-            
+
             // Try with workspace name as slug
             const nameSlug = workspaceName.toLowerCase().replace(/\s+/g, '-');
             if (base_base.workspaceIconsDB[nameSlug]) {
                 return base_base.workspaceIconsDB[nameSlug];
             }
-            
+
             // Try extracted icons from sidebar
             if (this.workspaceIcons[slug]) {
                 return this.workspaceIcons[slug];
@@ -374,7 +374,7 @@
             if (this.workspaceIcons[workspaceName.toLowerCase()]) {
                 return this.workspaceIcons[workspaceName.toLowerCase()];
             }
-            
+
             // Return default icon
             return 'folder-normal';
         }
@@ -383,11 +383,11 @@
             // Remove any existing base-base sidebar menus to prevent duplicates
             const existingMenus = this.sidebarContainer.querySelectorAll('.base-base-sidebar-menu');
             existingMenus.forEach(menu => menu.remove());
-            
+
             // Remove any existing separators
             const existingSeparators = this.sidebarContainer.querySelectorAll('.base-base-sidebar-separator');
             existingSeparators.forEach(sep => sep.remove());
-            
+
             const menuWrapper = document.createElement('div');
             menuWrapper.className = 'base-base-sidebar-menu';
 
@@ -404,7 +404,7 @@
 
             const separator = document.createElement('div');
             separator.className = 'base-base-sidebar-separator';
-            
+
             // Insert in correct order: menuWrapper first, then separator
             this.sidebarContainer.insertBefore(separator, this.sidebarContainer.firstChild);
             this.sidebarContainer.insertBefore(menuWrapper, this.sidebarContainer.firstChild);
@@ -455,7 +455,7 @@
             const itemEl = document.createElement('div');
             itemEl.className = 'base-base-sidebar-item';
             itemEl.setAttribute('data-workspace', slug);
-            
+
             const link = document.createElement('a');
             link.href = `/desk/${slug}`;
             link.className = 'base-base-sidebar-link';
@@ -464,7 +464,7 @@
                 <span class="item-icon">${frappe.utils.icon(icon, 'sm')}</span>
                 <span class="item-label">${item.label}</span>
             `;
-            
+
             if (window.location.pathname === `/desk/${slug}`) {
                 itemEl.classList.add('selected');
             }
@@ -478,14 +478,14 @@
                 header.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    
+
                     const category = header.closest('.base-base-category');
                     const categoryKey = category.getAttribute('data-category');
                     const itemsContainer = category.querySelector('.base-base-category-items');
                     const chevron = header.querySelector('.category-chevron');
-                    
+
                     const isCurrentlyCollapsed = itemsContainer.classList.contains('collapsed');
-                    
+
                     if (isCurrentlyCollapsed) {
                         itemsContainer.classList.remove('collapsed');
                         header.classList.add('expanded');
@@ -497,7 +497,7 @@
                         chevron.innerHTML = frappe.utils.icon('right', 'xs');
                         this.collapsedState[categoryKey] = true;
                     }
-                    
+
                     this.saveCollapsedState();
                 });
             });
@@ -532,43 +532,28 @@
     // ============================================
     // INITIALIZATION
     // ============================================
-    
-    console.log('🔵 Base Base: Script loaded at', new Date().toISOString());
 
-    // Force execution multiple times to ensure it works
+    // Force execution to apply sidebar and page body modifications
     base_base.forceApply = function() {
-        console.log('🔵 Base Base: forceApply called');
-        
-        // Initialize sidebar
         if (!base_base.sidebar) {
             base_base.sidebar = new base_base.SidebarManager();
         }
         base_base.sidebar.init();
-        
-        // Modify page body
         base_base.modifyPageBody();
-        
-        console.log('🔵 Base Base: forceApply completed');
     };
-    
+
     if (!base_base.handleRootRedirect()) {
-        console.log('🔵 Base Base: No redirect needed, initializing sidebar...');
-        
-        // Execute immediately when DOM is ready
         $(document).ready(function() {
-            console.log('🔵 Base Base: Document ready');
-            
-            // Try multiple times with increasing delays
+            // Apply once after DOM is ready
             setTimeout(() => base_base.forceApply(), 500);
-            setTimeout(() => base_base.forceApply(), 1500);
-            setTimeout(() => base_base.forceApply(), 3000);
         });
-        
-        // Also execute on page change (SPA navigation)
+
+        // Re-apply on SPA navigation (debounced)
         if (typeof frappe !== 'undefined' && frappe.router) {
+            let _applyTimer = null;
             frappe.router.on('change', function() {
-                console.log('🔵 Base Base: Route changed, re-applying...');
-                setTimeout(() => base_base.forceApply(), 500);
+                clearTimeout(_applyTimer);
+                _applyTimer = setTimeout(() => base_base.forceApply(), 300);
             });
         }
     }
@@ -582,14 +567,12 @@
             // Remove any existing base-base spacers
             const existingSpacers = pageBody.querySelectorAll('.base-base-page-spacer');
             existingSpacers.forEach(spacer => spacer.remove());
-            
+
             // Disable scroll
             pageBody.style.overflow = 'hidden';
-            
-            console.log('Base Base: Modified .page-body (disabled scroll)');
         }
     };
-    
+
     // Alias for backward compatibility
     base_base.modifyLayoutWrapper = base_base.modifyPageBody;
 
