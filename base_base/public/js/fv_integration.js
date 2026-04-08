@@ -8,7 +8,7 @@
     // App branding registration
     const APP_CONFIG = {
         name: "base_base",
-        title: __("Base Base"),
+        title: "Base Base",
         color: "#6B7280",
         module: "Base Base",
     };
