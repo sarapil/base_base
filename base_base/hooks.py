@@ -29,16 +29,8 @@ add_to_apps_screen = [
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = [
-    "/assets/base_base/css/base_base.css",
-    "/assets/base_base/css/base_base-theme.css",
-]
-app_include_js = [
-    "/assets/base_base/js/base_base.js",
-    "/assets/base_base/js/fv_integration.js",
-    "/assets/base_base/js/licensing.js",
-    "/assets/base_base/js/xr_mixin.js",
-]
+app_include_css = ["/assets/base_base/css/base_base_combined.css"]
+app_include_js = ["/assets/base_base/js/base_base_combined.js"]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/base_base/css/base_base.css"
