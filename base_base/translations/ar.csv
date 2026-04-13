@@ -1,5 +1,6 @@
 Base Base,بيس بيس,App Name
-Base Utilities & Overrides,أدوات أساسية,App Description
+Base Utilities & Overrides,أدوات أساسية ومُعدِّلات,App Description
+Shared Utilities,أدوات مشتركة,
 Settings,الإعدادات,
 Save,حفظ,
 Cancel,إلغاء,
@@ -60,3 +61,75 @@ Required,مطلوب,
 Invalid,غير صالح,
 Duplicate,مكرر,
 Base,Base,Module
+Validators,المُدققات,Utils
+Formatters,المُنسقات,Utils
+Constants,الثوابت,Utils
+Feature Gating,بوابة الميزات,Utils
+Licensing,التراخيص,Utils
+{0} is required,{0} مطلوب,Validator
+Invalid email address: {0},عنوان بريد إلكتروني غير صالح: {0},Validator
+Invalid phone number: {0},رقم هاتف غير صالح: {0},Validator
+{0} must be a number,{0} يجب أن يكون رقماً,Validator
+{0} must be greater than zero,{0} يجب أن يكون أكبر من صفر,Validator
+{0} must be one of: {1},{0} يجب أن يكون أحد: {1},Validator
+License key validated successfully,تم التحقق من مفتاح الترخيص بنجاح,Licensing
+License key is invalid,مفتاح الترخيص غير صالح,Licensing
+Premium features enabled,الميزات المتقدمة مُفعّلة,Licensing
+Premium features disabled,الميزات المتقدمة مُعطّلة,Licensing
+Feature requires premium license,الميزة تتطلب ترخيصاً متقدماً,Feature Gating
+Feature is disabled,الميزة معطلة,Feature Gating
+Feature is enabled,الميزة مُفعّلة,Feature Gating
+Check license status,تحقق من حالة الترخيص,Licensing
+Generate license key,إنشاء مفتاح ترخيص,Licensing
+Validate license key,التحقق من مفتاح الترخيص,Licensing
+Clear license cache,مسح ذاكرة التخزين المؤقت للتراخيص,Licensing
+License Information,معلومات الترخيص,Licensing
+License Tier,مستوى الترخيص,Licensing
+Free Tier,المستوى المجاني,Licensing
+Premium Tier,المستوى المتقدم,Licensing
+Enterprise Tier,مستوى المؤسسات,Licensing
+License Source,مصدر الترخيص,Licensing
+Frappe Cloud,فرابي كلاود,Licensing
+Self-hosted,استضافة ذاتية,Licensing
+License Expiry,انتهاء الترخيص,Licensing
+No expiry,بدون انتهاء,Licensing
+Currency Format,تنسيق العملة,Formatter
+Percentage Format,تنسيق النسبة المئوية,Formatter
+Date Format,تنسيق التاريخ,Formatter
+Datetime Format,تنسيق التاريخ والوقت,Formatter
+File Size Format,تنسيق حجم الملف,Formatter
+Text Truncation,اقتطاع النص,Formatter
+Utility Functions,الدوال المساعدة,
+Input Validation,التحقق من المدخلات,
+Output Formatting,تنسيق المخرجات,
+Application Constants,ثوابت التطبيق,
+Cache TTL,مدة صلاحية الذاكرة المؤقتة,Constants
+Page Size,حجم الصفحة,Constants
+Status Values,قيم الحالة,Constants
+Date Patterns,أنماط التاريخ,Constants
+Draft,مسودة,Status
+Completed,مكتمل,Status
+Cancelled,ملغي,Status
+Short TTL (5 min),مدة قصيرة (٥ دقائق),Cache
+Medium TTL (1 hour),مدة متوسطة (ساعة),Cache
+Long TTL (24 hours),مدة طويلة (٢٤ ساعة),Cache
+App Prefix,بادئة التطبيق,Constants
+App Color,لون التطبيق,Constants
+Default Currency,العملة الافتراضية,Formatter
+Precision,الدقة,Formatter
+Max Length,الحد الأقصى للطول,Formatter
+Ellipsis,علامة الحذف,Formatter
+Bytes,بايت,File Size
+Kilobytes,كيلوبايت,File Size
+Megabytes,ميجابايت,File Size
+Gigabytes,جيجابايت,File Size
+Terabytes,تيرابايت,File Size
+App Registry,سجل التطبيقات,Licensing
+Settings DocType,نوع مستند الإعدادات,Licensing
+License Field,حقل الترخيص,Licensing
+Secret Key,مفتاح السر,Licensing
+Marketplace URL,رابط السوق,Licensing
+Checksum,رمز التحقق,Licensing
+Key Validation,التحقق من المفتاح,Licensing
+Key Generation,إنشاء المفتاح,Licensing
+Cache Invalidation,إلغاء صلاحية الذاكرة المؤقتة,Licensing
