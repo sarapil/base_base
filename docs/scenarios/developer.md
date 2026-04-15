@@ -1,4 +1,5 @@
 # Developer — Usage Scenarios
+
 # سيناريوهات المطور
 
 ## Role Overview
@@ -65,7 +66,7 @@
      ```python
      @frappe.whitelist()
      def get_items(page_size=DEFAULT_PAGE_SIZE):
-         return frappe.get_all("Item", 
+         return frappe.get_all("Item",
              filters={"status": STATUS_ACTIVE},
              limit=min(page_size, 100)
          )
@@ -94,22 +95,26 @@
      }
      ```
   2. Import and use decorator:
+
      ```python
      from base_base.utils.feature_gating import require_premium
-     
+
      @frappe.whitelist()
      @require_premium("my_app", "ai_analytics")
      def run_ai_analysis():
          # Only runs if premium active
          ...
      ```
+
   3. Or use runtime check:
+
      ```python
      from base_base.utils.feature_gating import is_feature_enabled
-     
+
      if is_feature_enabled("my_app", "ai_analytics"):
          show_ai_button()
      ```
+
 - **Screen**: Conditional UI elements
 - **Error scenarios**: Feature disabled message shown to user
 
@@ -123,13 +128,15 @@
      from base_base.utils.licensing import is_premium_active, get_license_info
      ```
   2. Check status:
+
      ```python
      if is_premium_active("velara"):
          enable_premium_features()
-     
+
      info = get_license_info("velara")
      # {"is_premium": True, "tier": "premium", "source": "frappe_cloud"}
      ```
+
 - **Screen**: Settings page, license status
 - **Error scenarios**: Cache may return stale data (clear with clear_license_cache())
 
@@ -155,7 +162,7 @@
   2. Create Settings DocType with `license_key` field
   3. Add secret to `site_config.json`:
      ```json
-     {"new_app_license_secret": "RANDOM_256BIT_SECRET"}
+     { "new_app_license_secret": "RANDOM_256BIT_SECRET" }
      ```
   4. Test key generation and validation
 - **Screen**: App settings page

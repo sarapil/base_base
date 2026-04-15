@@ -135,7 +135,7 @@ class TestDateFormatConstants:
     def test_date_format_valid(self):
         """Date format should be valid strftime format."""
         from datetime import date, datetime
-        
+
         test_date = date(2026, 4, 15)
         result = test_date.strftime(DATE_FORMAT)
         assert result == "2026-04-15"
@@ -143,7 +143,7 @@ class TestDateFormatConstants:
     def test_datetime_format_valid(self):
         """Datetime format should be valid strftime format."""
         from datetime import datetime
-        
+
         test_dt = datetime(2026, 4, 15, 14, 30, 45)
         result = test_dt.strftime(DATETIME_FORMAT)
         assert result == "2026-04-15 14:30:45"
@@ -170,6 +170,6 @@ class TestConstantsUsability:
         # Simulate API pagination
         page_size = min(50, MAX_PAGE_SIZE)
         assert page_size == 50
-        
+
         page_size = min(200, MAX_PAGE_SIZE)
         assert page_size == 100  # Capped at max

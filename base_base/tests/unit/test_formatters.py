@@ -240,7 +240,7 @@ class TestFormattersIntegration:
         amount = format_currency(1500.50, "USD")
         pct = format_percentage(75.5)
         dt = format_date_short(date(2026, 4, 15))
-        
+
         assert "1500" in amount or "1,500" in amount
         assert pct == "75.5%"
         assert "2026" in dt
@@ -252,7 +252,7 @@ class TestFormattersIntegration:
             (2048000, "image.png"),
             (5368709120, "backup.zip"),
         ]
-        
+
         for size, name in files:
             formatted = format_file_size(size)
             truncated_name = truncate(name, 20)

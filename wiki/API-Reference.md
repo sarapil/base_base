@@ -21,16 +21,17 @@ from base_base.utils.validators import (
 )
 ```
 
-| Function | Description | Throws On |
-|----------|-------------|-----------|
-| `validate_required(value, field_label)` | Check value is not empty/None | Empty/None |
-| `validate_email(email)` | Validate email format | Invalid format |
-| `validate_phone(phone)` | Validate international phone | Invalid format |
-| `validate_positive_number(value, label)` | Ensure > 0 | Zero/Negative/Non-numeric |
-| `validate_in_list(value, options, label)` | Ensure value in allowed list | Value not in list |
-| `sanitize_html(value)` | Remove XSS from HTML | Never throws |
+| Function                                  | Description                   | Throws On                 |
+| ----------------------------------------- | ----------------------------- | ------------------------- |
+| `validate_required(value, field_label)`   | Check value is not empty/None | Empty/None                |
+| `validate_email(email)`                   | Validate email format         | Invalid format            |
+| `validate_phone(phone)`                   | Validate international phone  | Invalid format            |
+| `validate_positive_number(value, label)`  | Ensure > 0                    | Zero/Negative/Non-numeric |
+| `validate_in_list(value, options, label)` | Ensure value in allowed list  | Value not in list         |
+| `sanitize_html(value)`                    | Remove XSS from HTML          | Never throws              |
 
 **Example:**
+
 ```python
 def validate(self):
     validate_required(self.name, "Name")
@@ -57,14 +58,14 @@ from base_base.utils.formatters import (
 )
 ```
 
-| Function | Input | Output Example |
-|----------|-------|----------------|
-| `format_currency(1234.56, "USD")` | Amount, currency code | `"$1,234.56"` |
-| `format_percentage(75.5, precision=1)` | Value, decimal places | `"75.5%"` |
-| `format_date_short(date)` | Date object/string | `"15 Apr 2026"` |
-| `format_datetime_short(datetime)` | Datetime object/string | `"15 Apr 2026 14:30"` |
-| `truncate("Long text", 50)` | Text, max length | `"Long text..."` |
-| `format_file_size(1536000)` | Bytes | `"1.5 MB"` |
+| Function                               | Input                  | Output Example        |
+| -------------------------------------- | ---------------------- | --------------------- |
+| `format_currency(1234.56, "USD")`      | Amount, currency code  | `"$1,234.56"`         |
+| `format_percentage(75.5, precision=1)` | Value, decimal places  | `"75.5%"`             |
+| `format_date_short(date)`              | Date object/string     | `"15 Apr 2026"`       |
+| `format_datetime_short(datetime)`      | Datetime object/string | `"15 Apr 2026 14:30"` |
+| `truncate("Long text", 50)`            | Text, max length       | `"Long text..."`      |
+| `format_file_size(1536000)`            | Bytes                  | `"1.5 MB"`            |
 
 ---
 
@@ -103,6 +104,7 @@ from base_base.utils.feature_gating import (
 ```
 
 **Decorator Pattern:**
+
 ```python
 @frappe.whitelist()
 @require_premium("velara", "ai_pricing")
@@ -112,6 +114,7 @@ def run_ai_pricing(room):
 ```
 
 **Runtime Check:**
+
 ```python
 if is_feature_enabled("vertex", "advanced_analytics"):
     show_advanced_dashboard()
@@ -134,6 +137,7 @@ from base_base.utils.licensing import (
 ```
 
 **Check License:**
+
 ```python
 if is_premium_active("arrowz"):
     enable_premium_features()
@@ -170,4 +174,4 @@ except frappe.ValidationError as e:
 3. **Cache appropriately** — use CACHE_SHORT/MEDIUM/LONG based on data freshness needs
 4. **Handle None gracefully** — formatters return empty string for None input
 5. **Test thoroughly** — run base_base tests to ensure compliance
-| `INTERNAL_ERROR` | 500 | Server error | خطأ في الخادم |
+   | `INTERNAL_ERROR` | 500 | Server error | خطأ في الخادم |
